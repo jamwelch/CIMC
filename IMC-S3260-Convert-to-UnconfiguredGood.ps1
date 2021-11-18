@@ -281,7 +281,8 @@ if ($myCon -eq 0)
 	}
 
 Write-Output ""
-$Jbod = Get-ImcStorageLocalDisk -DiskState jbod | where {$_.VariantType -like "*BOOT*" -OR $_.DeviceType -like "*HDD*"}
+#$Jbod = Get-ImcStorageLocalDisk -DiskState jbod | where {$_.VariantType -like "*BOOT*" -OR $_.DeviceType -like "*HDD*"}
+$Jbod = Get-ImcStorageLocalDisk -DiskState jbod
 echo $Jbod | select DeviceType,DiskState,Dn,Rn
 Write-Output ""
 		if (!$Jbod)
@@ -305,7 +306,7 @@ Write-Output ""
 					}
 					foreach ($Item in $Jbod)
 						{
-							$Item | Set-ImcStorageLocalDisk -AdminAction unconfigured-good -AdminActionTrigger triggered -force
+							$Item | Set-ImcStorageLocalDisk -AdminAction make-unconfigured-good -Force
 						}
 				Write-Output ""
 				Write-Output "Done converting JBODs"
