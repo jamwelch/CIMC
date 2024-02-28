@@ -39,4 +39,4 @@ Write-host "Disks reset to factory default for server:" $cimcip $cimcname $cimcs
 Disconnect-Imc
 }
 
-write-host "All servers in the csv have completed.
+write-host "All servers in the csv have completed."
