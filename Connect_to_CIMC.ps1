@@ -1,6 +1,3 @@
-#This script will prompt user from input deciding whether to modify TPM settings for standalone C-Series servers via CIMC.
-#IMM servers are not supported by the script.
-
 #Check version of powershell
 Get-Host | Select-Object Version
 #Check version of Modules
