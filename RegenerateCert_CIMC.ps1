@@ -1,4 +1,4 @@
-# This is an example of ascript that could be used to regenerate a new self-signed certification for C-Series standalone rack servers.
+# This is an example of a script that could be used to regenerate a new self-signed certification for C-Series standalone rack servers.
 
 #3.5.2024 -jamwelch@cisco.com
 #Tested with Powershell 7.4.1
