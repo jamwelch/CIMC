@@ -13,8 +13,8 @@ Set-UcsPowerToolConfiguration -SupportMultipleDefaultUcs $true
 
 # CSV file should have 1 column with IP address of the cimc for each server and a heading of "IP"
 #Ask user for the name of the device file
-#$csv = read-host -Prompt "Enter the name of the csv file with the list of devices to be checked."
-$csv = Import-Csv F:\PowerShell\CIMC\serverlist.csv
+$csv = read-host -Prompt "Enter the name of the csv file with the list of devices to be checked."
+#$csv = Import-Csv F:\Path\to\csv\file.csv
 
 # Create the credential
 $cred = Get-Credential -Message "Cisco IMC"
