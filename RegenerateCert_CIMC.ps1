@@ -63,14 +63,6 @@ function WaitForDeviceToComeOnline {
     return $isOnline
 }
 
-
-# Function to read the current cert info in order to validate that the cert has been successfully renewed.
-function read_cert {
-    # Prompt for CIMC IP and credentials 
-    $result = Get-ImcCertificateManagement -Imc $handle
-    write-host $result
-}
-
 ForEach ($row in $csv) {
     $cimcip = $row.IP
     $handle = Connect-Imc -Name $cimcip -Credential $cred
