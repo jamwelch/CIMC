@@ -9,6 +9,7 @@ Get-Host | Select-Object Version
 # Use Install-Module -Name Cisco.IMC to install latest Cisco IMC package from Powershell Gallery
 # www.powershellgallery.com/packages/Cisco.IMC/
 Import-Module Cisco.IMC
+Set-UcsPowerToolConfiguration -SupportMultipleDefaultUcs $true
 
 # This CSV file should have 1 column with IP address of the cimc for each server and a heading of "IP"
 # Ask user for the name of the device file located in the same folder as the script.
