@@ -1,5 +1,5 @@
 # This is an example of ascript that could be used to create a report on cert expiration dats for C-Series standalone rack servers.
-# A file named 'cimc_cert_report.csv' will be created in the same location as the script
+# A file named 'cimc_cert_report_%date%time%.csv' will be created in the same location as the script
 
 #4.1.2024 -jamwelch@cisco.com
 #Tested with Powershell 7.4.1
@@ -16,7 +16,8 @@ Set-UcsPowerToolConfiguration -SupportMultipleDefaultUcs $true
 #Ask user for the name of the device file
 $csvfile = read-host -Prompt "Enter the name of the csv file with the list of devices to be checked."
 $csv = Import-Csv $csvfile
-$report = New-Item -Path ".\cimc_cert_report.csv" -ItemType File
+$filedate = (Get-Date -f yyyy-MM-dd_HH-mm)
+$report = New-Item -Path ".\cimc_cert_report_$filedate.csv" -ItemType File
 
 # Create the credential
 $cred = Get-Credential -Message "Cisco IMC"
